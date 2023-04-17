@@ -4,7 +4,6 @@ import com.example.graphqldemo.entity.School;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 
@@ -20,5 +19,5 @@ public interface SchoolMapper {
 
     @Insert("insert into t_school (name, ranking) values (#{name}, #{ranking})")
     @Options(useGeneratedKeys = true, keyProperty = "id")
-    Long insert(School school);
+    void insert(School school);
 }
